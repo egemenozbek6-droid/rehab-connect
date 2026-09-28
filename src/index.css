@@ -10,12 +10,12 @@
   --success: #16a34a;
   --warning: #d97706;
   --danger: #dc2626;
-  --bg: #f8fafc;
+  --bg: #f1f5f9;
   --card: #ffffff;
   --text: #0f172a;
   --text-muted: #64748b;
   --border: #e2e8f0;
-  --radius: 12px;
+  --radius: 14px;
 }
 
 body {
@@ -34,13 +34,13 @@ body {
   max-width: 390px;
   min-height: 844px;
   background: var(--bg);
-  border-radius: 24px;
+  border-radius: 28px;
   overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.55);
   position: relative;
 }
 
-/* Status bar mock */
+/* Status bar */
 .status-bar {
   height: 44px;
   background: #0f172a;
@@ -48,7 +48,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 22px;
   font-size: 14px;
   font-weight: 600;
 }
@@ -64,23 +64,24 @@ body {
 }
 
 .header h1 {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
 }
 
 .header .role-badge {
-  background: rgba(255,255,255,0.2);
-  padding: 4px 10px;
+  background: rgba(255,255,255,0.22);
+  padding: 5px 12px;
   border-radius: 20px;
   font-size: 12px;
+  font-weight: 500;
 }
 
 /* Content */
 .content {
   padding: 16px;
-  padding-bottom: 90px;
+  padding-bottom: 95px;
   overflow-y: auto;
-  max-height: calc(844px - 44px - 60px - 70px);
+  max-height: calc(844px - 44px - 58px - 72px);
 }
 
 /* Cards */
@@ -90,13 +91,18 @@ body {
   padding: 16px;
   margin-bottom: 12px;
   border: 1px solid var(--border);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.card:active {
+  transform: scale(0.98);
 }
 
 .card-title {
   font-size: 15px;
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   color: var(--text);
 }
 
@@ -108,8 +114,8 @@ body {
 
 .badge {
   display: inline-block;
-  padding: 3px 8px;
-  border-radius: 6px;
+  padding: 3px 9px;
+  border-radius: 7px;
   font-size: 11px;
   font-weight: 600;
 }
@@ -125,8 +131,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 12px 16px;
-  border-radius: 10px;
+  padding: 13px 16px;
+  border-radius: 12px;
   font-size: 14px;
   font-weight: 600;
   border: none;
@@ -140,6 +146,11 @@ body {
   color: white;
 }
 .btn-primary:hover { background: var(--primary-dark); }
+.btn-primary:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
 
 .btn-outline {
   background: white;
@@ -148,7 +159,7 @@ body {
 }
 
 .btn-sm {
-  padding: 8px 12px;
+  padding: 8px 13px;
   font-size: 13px;
   width: auto;
 }
@@ -165,26 +176,28 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 70px;
+  height: 72px;
   background: white;
   border-top: 1px solid var(--border);
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-bottom: 8px;
+  padding-bottom: 10px;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.04);
 }
 
 .nav-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
   font-size: 11px;
   color: var(--text-muted);
   background: none;
   border: none;
   cursor: pointer;
-  padding: 6px 12px;
+  padding: 6px 10px;
+  transition: all 0.15s;
 }
 
 .nav-item.active {
@@ -192,39 +205,47 @@ body {
   font-weight: 600;
 }
 
+.nav-item.active .nav-icon {
+  font-size: 24px;
+  transform: scale(1.1);
+}
+
 .nav-icon {
-  font-size: 22px;
+  font-size: 21px;
+  transition: all 0.15s;
 }
 
 /* Login */
 .login-screen {
-  padding: 40px 24px;
+  padding: 36px 22px;
   display: flex;
   flex-direction: column;
-  min-height: 700px;
+  min-height: 720px;
 }
 
 .logo {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 
 .logo-icon {
-  width: 72px;
-  height: 72px;
-  background: var(--primary);
-  border-radius: 20px;
+  width: 76px;
+  height: 76px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border-radius: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 36px;
+  font-size: 38px;
   margin: 0 auto 16px;
   color: white;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
 }
 
 .logo h1 {
-  font-size: 24px;
+  font-size: 26px;
   color: var(--text);
+  font-weight: 700;
 }
 
 .logo p {
@@ -237,44 +258,53 @@ body {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 24px;
+  margin-top: 20px;
 }
 
 .role-btn {
-  padding: 18px;
-  border-radius: 14px;
+  padding: 16px 18px;
+  border-radius: 16px;
   border: 2px solid var(--border);
   background: white;
   text-align: left;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all 0.18s;
   display: flex;
   align-items: center;
   gap: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
 }
 
-.role-btn:hover, .role-btn.selected {
+.role-btn:hover {
+  border-color: #93c5fd;
+  background: #f8fafc;
+}
+
+.role-btn.selected {
   border-color: var(--primary);
   background: #eff6ff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
 .role-icon {
   width: 48px;
   height: 48px;
-  border-radius: 12px;
+  border-radius: 13px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
+  flex-shrink: 0;
 }
 
 .role-info h3 {
-  font-size: 16px;
+  font-size: 15px;
   margin-bottom: 2px;
+  font-weight: 600;
 }
 
 .role-info p {
-  font-size: 13px;
+  font-size: 12.5px;
   color: var(--text-muted);
 }
 
@@ -283,14 +313,17 @@ body {
   width: 100%;
   padding: 12px 14px;
   border: 1.5px solid var(--border);
-  border-radius: 10px;
+  border-radius: 11px;
   font-size: 15px;
   margin-bottom: 12px;
   outline: none;
+  transition: border-color 0.15s;
+  background: white;
 }
 
 .input:focus {
   border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 .label {
@@ -324,12 +357,13 @@ body {
   justify-content: center;
   font-weight: 600;
   color: var(--primary);
-  font-size: 15px;
+  font-size: 14px;
+  flex-shrink: 0;
 }
 
 /* Progress */
 .progress-bar {
-  height: 8px;
+  height: 7px;
   background: #e2e8f0;
   border-radius: 4px;
   overflow: hidden;
@@ -338,18 +372,20 @@ body {
 
 .progress-fill {
   height: 100%;
-  background: var(--primary);
+  background: linear-gradient(90deg, #3b82f6, #2563eb);
   border-radius: 4px;
+  transition: width 0.4s ease;
 }
 
 /* Empty */
 .empty {
   text-align: center;
-  padding: 40px 20px;
+  padding: 48px 20px;
   color: var(--text-muted);
 }
 
 .empty-icon {
   font-size: 48px;
   margin-bottom: 12px;
+  opacity: 0.7;
 }
